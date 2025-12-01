@@ -3,18 +3,19 @@ import socket
 
 app = Flask(__name__)
 hostname = socket.gethostname()
-ip_address = socket.gethostbyname(hostname)
+ip_address = "Unavailable in Fargate"  
 
 @app.route('/')
 def hello_cloud():
-  return 'Hello Cloud! Dujiale 101029339'
-  
+    return 'Hello Cloud! Dujiale 101029339 Final Test API Server'
+
 @app.route('/host')
 def host_name():
-  return hostname
+    return hostname
 
 @app.route('/ip')
 def host_ip():
-  return ip_address
+    return ip_address
+
 
 # app.run(host='0.0.0.0')
